@@ -1,5 +1,4 @@
-name: Python package
-# https://help.github.com/ja/actions/language-and-framework-guides/using-python-with-github-actions
+name: Pull request automate set lable
 
 on: [pull_request]
 
@@ -10,7 +9,7 @@ jobs:
 
     steps:
     - name: Checkout automate set label
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
       with:
         repository: ren3-k/automate-set-label
         path: automate-set-label
