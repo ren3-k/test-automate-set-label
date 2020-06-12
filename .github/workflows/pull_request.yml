@@ -45,7 +45,8 @@ jobs:
     - name: Automate set label
       env:
         ACCESS_TOKEN: ${{ secrets.WORK_TOKEN }}
-        PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
+        TARGET_GITHUB_REPOSITORY: ${{ GITHUB_REPOSITORY }}
+        TARGET_PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
       run: |
         python ./automate-set-label/automate_set_label.py
 
