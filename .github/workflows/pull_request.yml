@@ -40,12 +40,12 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip setuptools wheel
-        pip install -r requirements.txt
+        pip install -r ./automate-set-label/requirements.txt
 
     - name: Automate set label
       env:
         ACCESS_TOKEN: ${{ secrets.WORK_TOKEN }}
         PULL_REQUEST_NUMBER: ${{ github.event.pull_request.number }}
       run: |
-        python ./automate_set_label.py
+        python ./automate-set-label/automate_set_label.py
 
